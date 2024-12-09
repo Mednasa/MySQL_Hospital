@@ -1,16 +1,16 @@
 create database z_mednasa_hospital;
 use z_mednasa_hospital;
 
-CREATE TABLE Patients(
-	patient_id INT AUTO_INCREMENT,          -- Patient's ID
-    first_name VARCHAR(100) NOT NULL,       -- Patient's First Name
-	last_name VARCHAR(100) NOT NULL,        -- Patient's Last Name
-    dob DATE,                               -- Patient's Date of Birth
-    gender VARCHAR(10),                     -- Patient's Gender
-    email VARCHAR(100),                     -- Patient's Email Address
-    phone VARCHAR(15),                      -- Patient's Phone Number
-    address TEXT,                           -- Patient's Address
-	PRIMARY KEY (patient_id)
+ CREATE TABLE Patients (
+    patient_id INT AUTO_INCREMENT,         -- Patient's ID
+    first_name VARCHAR(100) NOT NULL,      -- Patient's First Name
+    last_name VARCHAR(100) NOT NULL,       -- Patient's Last Name
+    dob DATE,                              -- Patient's Date of Birth
+    gender VARCHAR(10),                    -- Patient's Gender
+    email VARCHAR(100),                    -- Patient's Email Address
+    phone VARCHAR(15),                     -- Patient's Phone Number
+    address TEXT                           -- Patient's Address
+    PRIMARY KEY (patient_id)
 );
 
  CREATE TABLE Doctors(
@@ -25,7 +25,7 @@ CREATE TABLE Patients(
 );
 
  CREATE TABLE Appointments(
- 	appointment_id INT AUTO_INCREMENT,      -- Appointments ID
+    appointment_id INT AUTO_INCREMENT,      -- Appointments ID
     patient_id INT,                         -- Patient's ID
     doctor_id INT,                          -- Doctor's ID
     appointment_date DATETIME,              -- Appointment Date
