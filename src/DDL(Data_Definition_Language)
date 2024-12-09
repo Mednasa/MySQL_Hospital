@@ -1,0 +1,54 @@
+create database z_mednasa_hospital;
+use z_mednasa_hospital;
+
+CREATE TABLE Patients(
+	patient_id INT AUTO_INCREMENT,          -- Patient's ID
+    first_name VARCHAR(100) NOT NULL,       -- Patient's First Name
+	last_name VARCHAR(100) NOT NULL,        -- Patient's Last Name
+    dob DATE,                               -- Patient's Date of Birth
+    gender VARCHAR(10),                     -- Patient's Gender
+    email VARCHAR(100),                     -- Patient's Email Address
+    phone VARCHAR(15),                      -- Patient's Phone Number
+    address TEXT,                           -- Patient's Address
+	PRIMARY KEY (patient_id)
+);
+
+ CREATE TABLE Doctors(
+    doctor_id INT  AUTO_INCREMENT,          -- Doctor's ID
+    first_name VARCHAR(100) NOT NULL,       -- Doctor's First Name
+    last_name VARCHAR(100) NOT NULL,        -- Doctor's Last Name
+    specz VARCHAR(100),                     -- Doctor's Specialization
+    email VARCHAR(100),                     -- Doctor's Email Address
+    phone VARCHAR(15),                      -- Doctor's Phone Number
+    office_location VARCHAR(255),           -- Doctor's Office Location
+    PRIMARY KEY (doctor_id)
+);
+
+ CREATE TABLE Appointments(
+ 	appointment_id INT AUTO_INCREMENT,      -- Appointments ID
+    patient_id INT,                         -- Patient's ID
+    doctor_id INT,                          -- Doctor's ID
+    appointment_date DATETIME,              -- Appointment Date
+    status VARCHAR(50),                     -- Appointment status
+    PRIMARY KEY (appointment_id)
+);
+
+ CREATE TABLE Treatment_History(
+    treatment_id INT AUTO_INCREMENT,        -- Treatment ID
+    patient_id INT,                         -- Patient's ID
+    doctor_id INT,                          -- Doctor's ID
+    treatment_date DATE,                    -- Treatment Date
+    diagnosis TEXT,                         -- Patient's Diagnosis
+    treatment_plan TEXT,                    -- Patient's Treatment plan
+    medications TEXT,                       -- Medication Prescribed to the Patient
+    PRIMARY KEY (treatment_id)
+);
+
+ CREATE TABLE Prescriptions(
+    prescription_id INT AUTO_INCREMENT,     -- Prescription ID
+    treatment_id INT,                       -- Treatment ID
+    medication_name VARCHAR(255),           -- Medication Name
+    dosage VARCHAR(100),                    -- Drug dosage
+    duration VARCHAR(50),                   -- Time of Medication Intake
+    PRIMARY KEY (prescription_id)
+ );
